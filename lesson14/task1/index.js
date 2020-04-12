@@ -1,4 +1,4 @@
-let message = "Just learn it!";
+let message;
 
 export function sendMessage(name) {
   const sender = "Gromcode";
