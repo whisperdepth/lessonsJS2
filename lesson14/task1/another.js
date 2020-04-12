@@ -1,1 +1,1 @@
-import { sendMessage } from "./index";
+import { sendMessage, setMessage } from "./index";
