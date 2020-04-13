@@ -1,4 +1,4 @@
-const createLogger = () => {
+export const createLogger = () => {
   let memory = [];
 
   let warn = (text) =>
