@@ -2,13 +2,13 @@ export const createLogger = () => {
   let memory = [];
 
   let warn = (text) =>
-    memory.push({ message: text, dateTime: new Date(), type: "warn" });
+    memory.unshift({ message: text, dateTime: new Date(), type: "warn" });
 
   let error = (text) =>
-    memory.push({ message: text, dateTime: new Date(), type: "error" });
+    memory.unshift({ message: text, dateTime: new Date(), type: "error" });
 
   let log = (text) =>
-    memory.push({ message: text, dateTime: new Date(), type: "log" });
+    memory.unshift({ message: text, dateTime: new Date(), type: "log" });
 
   let getRecords = (text) => {
     if (text == "warn") return memory.filter((obj) => obj.type == "warn");
