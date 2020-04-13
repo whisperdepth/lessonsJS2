@@ -14,7 +14,7 @@ export const createLogger = () => {
     if (text == "warn") return memory.filter((obj) => obj.type == "warn");
     if (text == "error") return memory.filter((obj) => obj.type == "error");
     if (text == "log") return memory.filter((obj) => obj.type == "log");
-    return memory;
+    return memory.reverse();
   };
 
   let object = {
