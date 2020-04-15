@@ -1,4 +1,4 @@
-let user = {
+export let user = {
   firstName: "John",
   lastName: "Doe",
   getFullName() {
