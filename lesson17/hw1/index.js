@@ -11,7 +11,7 @@ export function sayName() {
 sayName.call(student);
 
 // вызовите ф-цию sayName так, чтобы в консоль вывелось имя 'Bruce' (используйте другой объект)
-sayName.call({name: "Bruce"});
+sayName.call({ name: "Bruce" });
 
 /* ===> 2 <=== */
 const company = {
@@ -45,8 +45,8 @@ function getPopulation(population) {
 // 'Population in Ukraine is 43000'
 // 43000 передавайте в виде числа
 // используйте объект country
-let population = 43000
-getPopulation.call(country, population);
+let population = 43000;
+console.log(getPopulation.call(country, population));
 
 /* ===> 4 <=== */
 const transaction = {
