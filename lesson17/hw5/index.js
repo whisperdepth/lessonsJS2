@@ -18,7 +18,7 @@ export const timer = {
   },
 
   stopTimer() {
-    let startTimerID = this.startTimer;
+    let startTimerID = this.startTimer();
     clearInterval(startTimerID);
   },
 };
