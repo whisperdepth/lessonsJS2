@@ -8,7 +8,7 @@ export const timer = {
         this.minsPassed += 1;
         this.secondsPassed = 0;
       }
-    }, 150);
+    }, 100);
   },
 
   getTime() {
@@ -17,11 +17,11 @@ export const timer = {
     return `${this.minsPassed}:0${this.secondsPassed}`;
   },
 
-  stopTimer() {
-    clearInterval(this.startTimer);
+  stopTimer(n) {
+    setTimeout(() => clearInterval(this.startTimer), n);
   },
 };
 
 timer.startTimer();
-timer.stopTimer();
+timer.stopTimer(1000);
 setTimeout(() => console.log(timer.getTime()), 2000);
