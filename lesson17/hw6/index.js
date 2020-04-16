@@ -26,9 +26,9 @@ export const multiplier = calculator.bind(calculator)
  * с использования .bind
  * и должна принимать 2 числа и возвращать из сумму
  */
-
-export const summator = calculator.bind(calculator);
 calculator.operation = "+";
+export const summator = calculator.bind(calculator);
+
 
 
 /*
@@ -36,7 +36,7 @@ calculator.operation = "+";
  * с использования .bind
  * и должна принимать 1 число и возвращать это число умноженное на 2
  */
-
-export const twice = calculator.bind(calculator, (calculator.b = 2));
 calculator.operation = "*";
+export const twice = calculator.bind(calculator, (calculator.b = 2));
+
 
