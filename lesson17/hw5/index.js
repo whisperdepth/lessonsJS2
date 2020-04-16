@@ -23,6 +23,5 @@ export const timer = {
 };
 
 timer.startTimer();
-timer.stopTimer();
 setTimeout(() => timer.stopTimer(), 1000);
 setTimeout(() => console.log(timer.getTime()), 2000);
