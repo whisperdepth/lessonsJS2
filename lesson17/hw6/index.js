@@ -18,9 +18,9 @@ export function calculator(a, b) {
  * с использования .bind
  * и должна принимать 2 числа и возвращать из произведение
  */
-
-export const multiplier = calculator.bind(calculator)
 export const multiple = calculator.operation = "*";
+export const multiplier = calculator.bind(calculator)
+
 /*
  * Ф-ция summator должна быть создана на основе calculator
  * с использования .bind
