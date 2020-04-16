@@ -18,7 +18,7 @@ export function calculator(a, b) {
  * с использования .bind
  * и должна принимать 2 числа и возвращать из произведение
  */
-const multiple = calculator.operation = "*";
+calculator.operation = "*";
 export const multiplier = calculator.bind(calculator)
 
 /*
