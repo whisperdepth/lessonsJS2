@@ -18,10 +18,10 @@ export const timer = {
   },
 
   stopTimer() {
-    let startTimerID = this.startTimer();
-    clearInterval(startTimerID);
+    clearInterval(this.startTimer());
   },
 };
+
 
 timer.startTimer();
 setTimeout(() => timer.stopTimer(), 1000);
