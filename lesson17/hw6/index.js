@@ -18,21 +18,22 @@ export function calculator(a, b) {
  * с использования .bind
  * и должна принимать 2 числа и возвращать из произведение
  */
-export const multiple = (calculator.operation = "*");
-export const multiplier = calculator.bind(calculator);
+
+export const multiplier = calculator.bind({ operation: "*" });
+console.log(multiplier(2, 3));
 
 /*
  * Ф-ция summator должна быть создана на основе calculator
  * с использования .bind
  * и должна принимать 2 числа и возвращать из сумму
  */
-export const sum = (calculator.operation = "+");
-export const summator = calculator.bind(calculator);
+export const summator = calculator.bind({ operation: "+" });
+console.log(summator(2, 3));
 
 /*
  * Ф-ция twice должна быть создана на основе calculator
  * с использования .bind
  * и должна принимать 1 число и возвращать это число умноженное на 2
  */
-export const two = (calculator.operation = "*");
-export const twice = calculator.bind(calculator, (calculator.b = 2));
+export const twice = calculator.bind({ operation: "*" }, (calculator.b = 2));
+console.log(twice(2));
