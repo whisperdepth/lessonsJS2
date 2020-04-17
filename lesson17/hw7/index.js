@@ -17,7 +17,7 @@ func2.call(user); */
 
 
 export function bind (func, context, [args]){
-   func.apply(context, [args]);
+   return func.apply(context, [args]);
 }
 /* 
 const func3 = user.sayHi;
