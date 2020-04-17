@@ -1,11 +1,11 @@
 /* const user = {
-    name: "Tom",
-    sayHi(){
-        console.log(`Hi, I am ${this.name}`);
-    }
-}
+  name: "Tom",
+  sayHi() {
+    console.log(`Hi, I am ${this.name}`);
+  },
+}; */
 
-user.sayHi();
+/* user.sayHi();
 
 const func = user.sayHi.bind(user);
 
@@ -16,9 +16,14 @@ const func2 = user.sayHi;
 func2.call(user); */
 
 export function bind(func, context, [args]) {
-  return func.apply(context, [args]);
+  return function () {
+    func.apply(context, [args]);
+  };
 }
-/* 
-const func3 = user.sayHi;
 
-bind(func3, user, []); */
+/* const func3 = user.sayHi;
+
+const func4 = bind(func3, user, []);
+
+func4();
+func4.apply({ name: "sam" }); */
