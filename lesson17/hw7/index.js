@@ -13,13 +13,13 @@ func();
 
 const func2 = user.sayHi;
 
-func2.call(user); */
+func2.call(user);
+ */
 
-
-export function bind (func, context, [args]){
-   return func.apply(context, [args]);
+export function bind (func, context){
+   return func.apply(context);
 }
-/* 
-const func3 = user.sayHi;
 
-bind(func3, user, []); */
+/* const func3 = user.sayHi;
+
+bind(func3, user); */
