@@ -17,4 +17,6 @@ export function bind(func, context, [args]) {
 const func4 = bind(func3, user, []);
 
 func4();
-func4.apply({ name: "sam" }); */
+func4.apply({ name: "Sam" });
+func4.bind({name: "Tom"});
+func4(); */
