@@ -5,15 +5,6 @@
   },
 }; */
 
-/* user.sayHi();
-
-const func = user.sayHi.bind(user);
-
-func();
-
-const func2 = user.sayHi;
-
-func2.call(user); */
 
 export function bind(func, context, [args]) {
   return function () {
