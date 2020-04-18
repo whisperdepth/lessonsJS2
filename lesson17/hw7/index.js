@@ -8,7 +8,7 @@
 
 export function bind(func, context, [args]) {
   return function () {
-    func.apply(context, [args]);
+    return func.apply(context, [args]);
   };
 }
 
