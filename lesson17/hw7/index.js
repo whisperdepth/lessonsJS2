@@ -22,7 +22,7 @@ func4.bind({name: "Bob"});
 func4();
  */
 
-const bind = function (func, context) {
+export const bind = function (func, context) {
   let bindArgs = [].slice.call(arguments, 2);
   return function () {
     let funcArgs = [].slice.call(arguments);
