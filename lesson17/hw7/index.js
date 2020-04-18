@@ -1,4 +1,4 @@
-const user = {
+/* const user = {
   name: "Tom",
   sayHi() {
     console.log(`Hi, I am ${this.name}`);
@@ -20,3 +20,12 @@ func4();
 func4.apply({ name: "Sam" });
 func4.bind({name: "Bob"});
 func4();
+ */
+
+const bind = function (func, context) {
+  let bindArgs = [].slice.call(arguments, 2);
+  return function () {
+    let funcArgs = [].slice.call(arguments);
+    func.apply(context, bindArgs.concat(funcArgs));
+  };
+};
