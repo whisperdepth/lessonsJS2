@@ -1,3 +1,5 @@
 export function getOwnProps(obj) {
-  return Object.keys(obj);
+  if(obj.hasOwnProperty(prop)){
+      return prop;
+  }
 }
