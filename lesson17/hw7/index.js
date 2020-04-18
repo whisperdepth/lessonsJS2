@@ -8,7 +8,7 @@ const user = {
 
 export function bind(func, context, [args]) {
   return function () {
-    return func.apply(context, [args]);
+    func.apply(context, [args]);
   };
 }
 
