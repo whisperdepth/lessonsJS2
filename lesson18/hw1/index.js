@@ -1,18 +1,9 @@
 
-
-const test = (a, b) => {
-  return a + b;
-};
-
 export function saveCalls(func) {
-  return function () {
-    let calls = [];
-    calls.push([...arguments]);
+  function withMemory(...args) {
+    withMemory.calls.push(args);
     return func.apply(this, arguments);
-  };
+  }
+  withMemory.calls = [];
+  return withMemory;
 }
-
-const testWithMemory = saveCalls(test);
-console.log(testWithMemory(3, 4));
-console.log(testWithMemory(7, 2));
-console.log(testWithMemory.calls);
