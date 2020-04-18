@@ -1,5 +1,7 @@
 export function getOwnProps(obj) {
+    let arr = []
   if(obj.hasOwnProperty(prop)){
-      return prop;
+      arr.push(prop);
   }
+  return arr;
 }
