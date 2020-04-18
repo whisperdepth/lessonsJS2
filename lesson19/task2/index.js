@@ -1,7 +1,7 @@
 export function getOwnProps(obj) {
   let arr = [];
   for (let prop in obj) {
-    if (obj.hasOwnProperty(prop)) {
+    if (obj.hasOwnProperty(prop) && typeof prop != "function") {
       arr.push(prop);
     }
   }
