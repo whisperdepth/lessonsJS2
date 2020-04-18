@@ -6,7 +6,7 @@ const test = (a, b) => {
 
 export function saveCalls(func) {
   return function () {
-    let calls = [3];
+    let calls = [];
     calls.push([...arguments]);
     return func.apply(this, arguments);
   };
