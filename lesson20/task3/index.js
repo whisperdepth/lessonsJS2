@@ -14,6 +14,4 @@ export class Wallet {
     this.#balance -= amount;
   }
 }
-
-let wal = new Wallet();
-console.log(wal);
+1
