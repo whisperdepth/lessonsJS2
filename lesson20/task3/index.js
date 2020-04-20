@@ -15,6 +15,3 @@ export class Wallet {
   }
 }
 
-let wal = new Wallet();
-console.log(wal);
-wal.withdraw(4);
