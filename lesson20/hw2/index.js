@@ -19,7 +19,8 @@ export class User {
 export class UserRepository {
   constructor(arr) {
     this.users = [];
-    Object.freeze(this.users.push(...arr));
+    this.users.push(...arr);
+    Object.freeze(...this.users)
   }
 
   getUserNames() {
