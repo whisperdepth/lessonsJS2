@@ -21,7 +21,7 @@ export class Ship extends Vehicle {
     console.log(`${this.name} lifting anchor up`);
     super.move();
   }
-  sstop() {
+  stop() {
     super.stop();
     console.log(`${this.name} lifting anchor down`);
   }
