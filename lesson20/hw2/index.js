@@ -18,19 +18,23 @@ export class User {
 
 export class UserRepository {
   constructor(arr) {
-    this.users = [];
-    this.users.push(...arr);
-    Object.freeze({...this.users})
+    this._users = [];
+    this._users.push(...arr);
+    Object.freeze(this._users)
+  }
+
+  get users(){
+      return this._users;
   }
 
   getUserNames() {
-    return this.users.map((user) => user._name);
+    return this._users.map((user) => user._name);
   }
   getUserIds() {
-    return this.users.map((user) => user._id);
+    return this._users.map((user) => user._id);
   }
   getUserNameById(id) {
-    this.users.forEach((user) => {
+    this._users.forEach((user) => {
       if (user._id == id) {
         console.log(user._name);
         return user._name;
@@ -48,7 +52,7 @@ arr.push(user1, user2);
 
 let userRep = new UserRepository(arr);
 
-console.log(userRep.users);
+console.log(userRep._users);
 
 console.log(userRep.getUserNames());
 
