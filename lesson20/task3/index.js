@@ -14,4 +14,3 @@ export class Wallet {
     this.#balance -= amount;
   }
 }
-1
