@@ -43,7 +43,7 @@ export class UserRepository {
   } */
 
   getUserNameById(id) {
-    return this._users.filter((user) => user._id == id);
+    return this._users.filter((user) => user._id == id)[0]._name;
   }
 }
 
