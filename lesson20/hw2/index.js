@@ -20,11 +20,11 @@ export class UserRepository {
   constructor(arr) {
     this._users = [];
     this._users.push(...arr);
-    Object.freeze(this._users)
+    Object.freeze(this._users);
   }
 
-  get users(){
-      return this._users;
+  get users() {
+    return this._users;
   }
 
   getUserNames() {
@@ -33,13 +33,17 @@ export class UserRepository {
   getUserIds() {
     return this._users.map((user) => user._id);
   }
-  getUserNameById(id) {
+  /* getUserNameById(id) {
     this._users.forEach((user) => {
       if (user._id == id) {
         console.log(user._name);
         return user._name;
       }
     });
+  } */
+
+  getUserNameById(id) {
+    return this._users.filter((user) => user._id == id);
   }
 }
 
