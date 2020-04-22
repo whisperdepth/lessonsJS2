@@ -11,11 +11,15 @@ export function squaredNumbers() {
   const dataNum3 = numbersElem3.dataset.number;
   numbersElem3.dataset.squaredNumber = dataNum3 * dataNum3; */
 
-  const numbersElems = document.querySelectorAll(".number");
-  for (let numbersElem in numbersElems) {
+  /* const numbersElems = Array.from(document.querySelectorAll(".number"));
+  for (let numbersElem of numbersElems) {
     const dataNum = numbersElem.dataset.number;
     numbersElem.dataset.squaredNumber = dataNum * dataNum;
-  }
+  } */
+
+  Array.from(document.querySelectorAll(".number")).forEach((numbersElem) => {
+    const dataNum = numbersElem.dataset.number;
+    numbersElem.dataset.squaredNumber = dataNum * dataNum;
+  });
 }
 
-squaredNumbers();
