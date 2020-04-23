@@ -30,10 +30,23 @@ const clearEventsList = () => {
 };
 btnClear.addEventListener("click", clearEventsList);
 
-/* const rectangles = document.querySelector(".rect"); */
+const rectangles = document.querySelectorAll(".rect");
+console.log(Array.from(rectangles));
+
 const btnRemoveHandleds = document.querySelector(".remove-handlers-btn");
 const disableHandleds = () => {
-    divElem.removeEventListener("click", logGreyDiv);
+   /*  divElem.removeEventListener("click", logGreyDiv, true);
+    divElem.removeEventListener("click", logGreenDiv);
+
+    pElem.removeEventListener("click", logGreyP, { capture: true });
+    pElem.removeEventListener("click", logGreenP);
+
+    spanElem.removeEventListener("click", logGreySpan, { capture: true });
+    spanElem.removeEventListener("click", logGreenSpan); */
+
+    Array.from(rectangles).forEach((rectangle) =>{
+        rectangle.removeEventListener("click", )
+    });
 };
 
 btnRemoveHandleds.addEventListener("click", disableHandleds);
