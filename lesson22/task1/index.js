@@ -45,7 +45,7 @@ const disableHandleds = () => {
     spanElem.removeEventListener("click", logGreenSpan); */
 
     Array.from(rectangles).forEach((rectangle) =>{
-        rectangle.removeEventListener("click", )
+        rectangle.removeEventListener("click", logGreenDiv);
     });
 };
 
