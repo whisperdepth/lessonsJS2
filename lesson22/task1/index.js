@@ -15,14 +15,20 @@ const logGreyDiv = logTarget.bind(null, "DIV", "grey");
 const logGreyP = logTarget.bind(null, "P", "grey");
 const logGreySpan = logTarget.bind(null, "SPAN", "grey");
 
-divElem.addEventListener("click", logGreyDiv, { capture: true });
-divElem.addEventListener("click", logGreenDiv);
+const btnAttachHandleds = document.querySelector(".attach-handlers-btn");
+const attachHandleds = () => {
+  divElem.addEventListener("click", logGreyDiv, { capture: true });
+  divElem.addEventListener("click", logGreenDiv);
 
-pElem.addEventListener("click", logGreyP, { capture: true });
-pElem.addEventListener("click", logGreenP);
+  pElem.addEventListener("click", logGreyP, { capture: true });
+  pElem.addEventListener("click", logGreenP);
 
-spanElem.addEventListener("click", logGreySpan, { capture: true });
-spanElem.addEventListener("click", logGreenSpan);
+  spanElem.addEventListener("click", logGreySpan, { capture: true });
+  spanElem.addEventListener("click", logGreenSpan);
+};
+
+attachHandleds();
+btnAttachHandleds.addEventListener("click", attachHandleds);
 
 const btnClear = document.querySelector(".clear-btn");
 const clearEventsList = () => {
@@ -30,23 +36,17 @@ const clearEventsList = () => {
 };
 btnClear.addEventListener("click", clearEventsList);
 
-const rectangles = document.querySelectorAll(".rect");
-console.log(Array.from(rectangles));
-
 const btnRemoveHandleds = document.querySelector(".remove-handlers-btn");
 const disableHandleds = () => {
-   /*  divElem.removeEventListener("click", logGreyDiv, true);
-    divElem.removeEventListener("click", logGreenDiv);
+  divElem.removeEventListener("click", logGreyDiv, true);
+  divElem.removeEventListener("click", logGreenDiv);
 
-    pElem.removeEventListener("click", logGreyP, { capture: true });
-    pElem.removeEventListener("click", logGreenP);
+  pElem.removeEventListener("click", logGreyP, { capture: true });
+  pElem.removeEventListener("click", logGreenP);
 
-    spanElem.removeEventListener("click", logGreySpan, { capture: true });
-    spanElem.removeEventListener("click", logGreenSpan); */
-
-    Array.from(rectangles).forEach((rectangle) =>{
-        rectangle.removeEventListener("click", logGreenDiv);
-    });
+  spanElem.removeEventListener("click", logGreySpan, { capture: true });
+  spanElem.removeEventListener("click", logGreenSpan);
 };
-
 btnRemoveHandleds.addEventListener("click", disableHandleds);
+
+
