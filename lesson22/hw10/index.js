@@ -44,6 +44,8 @@ const renderListItems = (listItems) => {
   checkBoxElems.forEach((listItem) => {
     listItem.addEventListener("change", switсhCheckBox);
   });
+
+ 
 };
 
 renderListItems(tasks);
