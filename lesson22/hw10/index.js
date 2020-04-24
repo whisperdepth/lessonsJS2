@@ -34,42 +34,18 @@ const lisItemElems = document.querySelectorAll(".list__item");
 const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
 
 const swithCheckBox = (event) => {
-  const sorting = () =>
-    lisItemElems.forEach((lisItemElem) => {
-      if (lisItemElem.classList.contains("list__item_done")) {
-        lisItemElem.remove();
-        listElem.append(lisItemElem);
-      }
-    });
+  const currentListItem = event.target.closest(".list__item");
 
-  if (event.target.checked) {
-    event.target.closest(".list__item").classList.add("list__item_done");
-    sorting();
-    return;
-  }
-  event.target.closest(".list__item").classList.remove("list__item_done");
-  sorting();
+  tasks.forEach((task) => {
+    if (task.text == currentListItem.innerText) {
+      task.done = event.target.checked;
+    }
+  });
+  listElem.innerHTML = null;
+  renderListItems(tasks);
+
 };
 
 checkBoxElems.forEach((listItemElem) => {
   listItemElem.addEventListener("change", swithCheckBox);
 });
-
-const createBtnElem = document.querySelector(".create-task-btn");
-const createTask = () => {
-  const listItemElem = document.createElement("li");
-  listItemElem.classList.add("list__item");
-
-  const checkBoxElem = document.createElement("input");
-  checkBoxElem.setAttribute("type", "checkbox");
-  checkBoxElem.classList.add("list__item-checkbox");
-
-  const inputElem = document.querySelector(".task-input");
-  if (inputElem.value == "") return;
-  listItemElem.append(checkBoxElem, inputElem.value);
-  inputElem.value = "";
-  listElem.prepend(listItemElem);
-  listItemElem.addEventListener("change", swithCheckBox);
-};
-
-createBtnElem.addEventListener("click", createTask);
