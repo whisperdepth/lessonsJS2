@@ -10,7 +10,7 @@ const listElem = document.querySelector(".list");
 
 const renderListItems = (listItems) => {
   const listItemsElems = listItems
-    .sort((a, b) => b.done - a.done)
+    .sort((a, b) => a.done - b.done)
     .map(({ text, done }) => {
       const listItemElem = document.createElement("li");
       listItemElem.classList.add("list__item");
@@ -44,8 +44,6 @@ const renderListItems = (listItems) => {
   checkBoxElems.forEach((listItem) => {
     listItem.addEventListener("change", switсhCheckBox);
   });
-
- 
 };
 
 renderListItems(tasks);
@@ -53,11 +51,11 @@ renderListItems(tasks);
 const createBtnElem = document.querySelector(".create-task-btn");
 
 const crealeListItem = () => {
-  const inputElem = document.querySelector(".task-input")
+  const inputElem = document.querySelector(".task-input");
   if (inputElem.value == "") return;
-    tasks.push({ text: `${inputElem.value}`, done: false });
-    inputElem.value = null;
-   listElem.innerHTML = null;
+  tasks.unshift({ text: `${inputElem.value}`, done: false });
+  inputElem.value = null;
+  listElem.innerHTML = null;
   renderListItems(tasks);
 };
 createBtnElem.addEventListener("click", crealeListItem);
