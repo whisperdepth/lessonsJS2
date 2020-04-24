@@ -33,7 +33,8 @@ renderListItems(tasks);
 const lisItemElems = document.querySelectorAll(".list__item");
 const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
 
-const swithCheckBox = (event) => {
+const switсhCheckBox = (event) => {
+  console.log("wr")
   const currentListItem = event.target.closest(".list__item");
 
   tasks.forEach((task) => {
@@ -47,5 +48,5 @@ const swithCheckBox = (event) => {
 };
 
 checkBoxElems.forEach((listItemElem) => {
-  listItemElem.addEventListener("change", swithCheckBox);
+  listItemElem.addEventListener("change", switсhCheckBox);
 });
