@@ -33,13 +33,11 @@ renderListItems(tasks);
 
 const listItemElems = document.querySelectorAll(".list__item");
 const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
+console.log(listItemElems);
 
 const swithCheckBox = (event) => {
-  Array.from(listItemElems).map((listItemElem) => {
-
-    if (event.target.checked) return listItemElem.classList.add("list__item_done");
-    return listItemElem.classList.remove("list__item_done");
-  });
+    if (event.target.checked) return event.target.closest(".list__item").classList.add("list__item_done");
+    event.target.closest(".list__item").classList.remove("list__item_done");
 };
 
 checkBoxElems.forEach((listItemElem) => {
