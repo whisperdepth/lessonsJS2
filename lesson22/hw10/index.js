@@ -42,6 +42,6 @@ const swithCheckBox = (event) => {
   });
 };
 
-Array.from(checkBoxElems).forEach((listItemElem) => {
+checkBoxElems.forEach((listItemElem) => {
   listItemElem.addEventListener("change", swithCheckBox);
 });
