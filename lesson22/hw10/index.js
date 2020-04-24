@@ -5,6 +5,7 @@ const tasks = [
   { text: "Visit doctor", done: true },
   { text: "Buy meat", done: true },
 ];
+
 const listElem = document.querySelector(".list");
 
 const renderListItems = (listItems) => {
@@ -26,27 +27,32 @@ const renderListItems = (listItems) => {
     });
 
   listElem.append(...listItemsElems);
+
+  const switсhCheckBox = (event) => {
+    const currentListItem = event.target.closest(".list__item");
+
+    tasks.forEach((task) => {
+      if (task.text == currentListItem.innerText) {
+        task.done = event.target.checked;
+      }
+    });
+    listElem.innerHTML = null;
+    renderListItems(tasks);
+  };
+  const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
+
+  checkBoxElems.forEach((listItem) => {
+    listItem.addEventListener("change", switсhCheckBox);
+  });
 };
 
 renderListItems(tasks);
 
-const lisItemElems = document.querySelectorAll(".list__item");
-const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
+const createBtnElem = document.querySelector(".create-task-btn");
 
-const switсhCheckBox = (event) => {
-  console.log("wr")
-  const currentListItem = event.target.closest(".list__item");
-
-  tasks.forEach((task) => {
-    if (task.text == currentListItem.innerText) {
-      task.done = event.target.checked;
-    }
-  });
-  listElem.innerHTML = null;
-  renderListItems(tasks);
-
+const crealeListItem = () => {
+  const inputItem = document.querySelector(".task-input");
+  
 };
 
-checkBoxElems.forEach((listItemElem) => {
-  listItemElem.addEventListener("change", switсhCheckBox);
-});
+createBtnElem.addEventListener("click", crealeListItem);
