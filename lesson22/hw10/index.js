@@ -33,7 +33,7 @@ const renderListItems = (listItems) => {
     const currentListItem = event.target.closest(".list__item");
     tasks.forEach((task) => {
       if (task.text == currentListItem.innerText) {
-        task.done = event.target.checked;
+        task.done = String(event.target.checked);
       }
     });
 
