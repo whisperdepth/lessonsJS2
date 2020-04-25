@@ -33,7 +33,7 @@ const renderListItems = (listItems) => {
     const currentListItem = event.target.closest(".list__item");
     tasks.forEach((task) => {
       if (task.text == currentListItem.innerText) {
-        task.done = String(event.target.checked);
+        task.done = event.target.checked;
       }
     });
 
@@ -50,7 +50,7 @@ const createBtnElem = document.querySelector(".create-task-btn");
 const createListItem = () => {
   const inputElem = document.querySelector(".task-input");
   if (inputElem.value == "") return;
-  tasks.unshift({ text: `${inputElem.value}`, done: "false" });
+  tasks.unshift({ text: `${inputElem.value}`, done: false });
   inputElem.value = null;
 
   renderListItems(tasks);
