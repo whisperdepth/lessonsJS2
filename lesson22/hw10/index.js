@@ -40,8 +40,8 @@ const renderListItems = (listItems) => {
     renderListItems(tasks);
   };
 
-  const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
-  checkBoxElems.forEach((listItem) => {
+  /* const checkBoxElems = document.querySelectorAll(".list__item-checkbox"); */
+  listItemsElems.forEach((listItem) => {
     listItem.addEventListener("change", switсhCheckBox);
   });
 };
