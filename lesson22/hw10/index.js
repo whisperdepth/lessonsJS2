@@ -56,6 +56,6 @@ const createListItem = () => {
   renderListItems(tasks);
 };
 
-createBtnElem.addEventListener("click", crealeListItem);
+createBtnElem.addEventListener("click", createListItem);
 
 renderListItems(tasks);
