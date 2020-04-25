@@ -2,8 +2,8 @@ const tasks = [
   { text: "Buy milk", done: false },
   { text: "Pick up Tom from airport", done: false },
   { text: "Visit party", done: false },
-  { text: "Visit doctor", done: true },
-  { text: "Buy meat", done: true },
+  { text: "Visit doctor", done: false },
+  { text: "Buy meat", done: false },
 ];
 
 const renderListItems = (listItems) => {
@@ -40,8 +40,8 @@ const renderListItems = (listItems) => {
     renderListItems(tasks);
   };
 
-  /* const checkBoxElems = document.querySelectorAll(".list__item-checkbox"); */
-  listItemsElems.forEach((listItem) => {
+  const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
+  checkBoxElems.forEach((listItem) => {
     listItem.addEventListener("change", switсhCheckBox);
   });
 };
