@@ -47,8 +47,6 @@ const renderListItems = (listItems) => {
   });
 };
 
-renderListItems(tasks);
-
 const createBtnElem = document.querySelector(".create-task-btn");
 
 const crealeListItem = () => {
@@ -59,4 +57,7 @@ const crealeListItem = () => {
 
   renderListItems(tasks);
 };
+
 createBtnElem.addEventListener("click", crealeListItem);
+
+renderListItems(tasks);
