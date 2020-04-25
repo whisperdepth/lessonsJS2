@@ -42,7 +42,7 @@ const renderListItems = (listItems) => {
 
   const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
   checkBoxElems.forEach((listItem) => {
-    listItem.addEventListener("click", switсhCheckBox);
+    listItem.addEventListener("change", switсhCheckBox);
   });
 };
 
