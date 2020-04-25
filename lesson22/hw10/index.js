@@ -6,9 +6,10 @@ const tasks = [
   { text: "Buy meat", done: true },
 ];
 
-const listElem = document.querySelector(".list");
-
 const renderListItems = (listItems) => {
+  const listElem = document.querySelector(".list");
+  listElem.innerHTML = null;
+
   const listItemsElems = listItems
     .sort((a, b) => a.done - b.done)
     .map(({ text, done }) => {
@@ -36,7 +37,7 @@ const renderListItems = (listItems) => {
         task.done = event.target.checked;
       }
     });
-    listElem.innerHTML = null;
+
     renderListItems(tasks);
   };
   const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
@@ -55,7 +56,7 @@ const crealeListItem = () => {
   if (inputElem.value == "") return;
   tasks.unshift({ text: `${inputElem.value}`, done: false });
   inputElem.value = null;
-  listElem.innerHTML = null;
+
   renderListItems(tasks);
 };
 createBtnElem.addEventListener("click", crealeListItem);
