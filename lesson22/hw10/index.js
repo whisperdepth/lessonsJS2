@@ -31,7 +31,6 @@ const renderListItems = (listItems) => {
 
   const switсhCheckBox = (event) => {
     const currentListItem = event.target.closest(".list__item");
-
     tasks.forEach((task) => {
       if (task.text == currentListItem.innerText) {
         task.done = event.target.checked;
@@ -40,15 +39,14 @@ const renderListItems = (listItems) => {
 
     renderListItems(tasks);
   };
-  const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
 
+  const checkBoxElems = document.querySelectorAll(".list__item-checkbox");
   checkBoxElems.forEach((listItem) => {
-    listItem.addEventListener("change", switсhCheckBox);
+    listItem.addEventListener("click", switсhCheckBox);
   });
 };
 
 const createBtnElem = document.querySelector(".create-task-btn");
-
 const crealeListItem = () => {
   const inputElem = document.querySelector(".task-input");
   if (inputElem.value == "") return;
