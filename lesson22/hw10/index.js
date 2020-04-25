@@ -11,8 +11,8 @@ const renderListItems = (listItems) => {
   listElem.innerHTML = null;
 
   const listItemsElems = listItems
-    /* .sort((a, b) => a.done - b.done)
-     */.map(({ text, done }) => {
+    .sort((a, b) => a.done - b.done)
+    .map(({ text, done }) => {
       const listItemElem = document.createElement("li");
       listItemElem.classList.add("list__item");
       if (done) {
