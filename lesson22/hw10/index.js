@@ -47,7 +47,7 @@ const renderListItems = (listItems) => {
 };
 
 const createBtnElem = document.querySelector(".create-task-btn");
-const crealeListItem = () => {
+const createListItem = () => {
   const inputElem = document.querySelector(".task-input");
   if (inputElem.value == "") return;
   tasks.unshift({ text: `${inputElem.value}`, done: false });
