@@ -31,7 +31,7 @@ const renderListItems = (listItems) => {
 
   const switсhCheckBox = (event) => {
     const currentListItem = event.target.closest(".list__item");
-    tasks.forEach((task) => {
+    tasks.find((task) => {
       if (task.text == currentListItem.innerText) {
         task.done = event.target.checked;
       }
