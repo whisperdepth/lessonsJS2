@@ -10,4 +10,4 @@ export const getGreenwichTime = (date) => {
   return formatter.format(date);
 };
 
-console.log(getTime(new Date()));
+console.log(getGreenwichTime(new Date()));
