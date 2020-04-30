@@ -1,23 +1,33 @@
 const students = [
-  { name: "Tom", birthDate: "01/15/2010" },
+  { name: "Tom", birthDate: "01/19/2010" },
   { name: "Ben", birthDate: "01/17/2008" },
   { name: "Sam", birthDate: "03/15/2010" },
 ];
 
+
 export function studentsBirthDays(students) {
-  const obj = {};
-  const studentsDate = students.map(
-    (student) => (student.birthDate = new Date(student.birthDate))
-  );
+  const formatter = new Intl.DateTimeFormat("en", {
+    month: "short",
+  });
 
-  return studentsDate;
+  const obj = students.reduce((acc, student) => {
+    const month = formatter.format(new Date(student.birthDate));
+    return {
+      ...acc,
+      [month]: acc[month] ? acc[month].concat(student) : [student],
+    };
+  }, {});
+
+  for (let key in obj) {
+    obj[key].sort(
+      (a, b) =>
+        new Date(a.birthDate).getDate() - new Date(b.birthDate).getDate()
+    );
+  }
+
+  for (let key in obj) {
+    obj[key] = obj[key].map((student) => student.name);
+  }
+
+  return obj;
 }
-console.log(studentsBirthDays(students));
-
-const students2 = [
-  { name: "Tom", birthDate: new Date("01/15/2010") },
-  { name: "Ben", birthDate: new Date("01/17/2008") },
-  { name: "Sam", birthDate: new Date("03/15/2010") },
-];
-
-console.log(students2);
