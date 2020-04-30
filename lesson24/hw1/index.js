@@ -1,6 +1,6 @@
 export const getDiff = (startDate, endDate) => {
     const difference = Math.abs(startDate - endDate);
-    const days = difference / 864e5;
+    const days = (difference / 1000) * 60 * 60 * 24;
     const daysRounded = Math.floor(days);
     const hours = (days - daysRounded) * 24;
     const hoursRounded = Math.floor(hours);
