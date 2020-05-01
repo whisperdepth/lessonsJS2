@@ -8,8 +8,6 @@ const tasks = [
     { text: 'Buy meat', done: true, createDate: new Date().toISOString(), id: '5' },
 ];
 
-console.log(new Date(tasks[0].createDate).getTime());
-
 const renderTasks = tasksList => {
     listElem.innerHTML = '';
     const tasksElems = tasksList
