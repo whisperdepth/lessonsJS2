@@ -46,7 +46,6 @@ const onToggleTask = e => {
     
     Object.assign(taskData, { done: e.target.checked });
     if(taskData.done) taskData.completeData = new Date().toISOString();
-    console.log(taskData);
     renderTasks(tasks);
 };
 
