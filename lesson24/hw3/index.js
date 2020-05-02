@@ -5,21 +5,21 @@ const tasks = [
     text: "Buy milk",
     done: false,
     createDate: new Date().toISOString(),
-    comleteDate: undefined,
+    comleteDate: Infinity,
     id: "1",
   },
   {
     text: "Pick up Tom from airport",
     done: false,
     createDate: new Date().toISOString(),
-    comleteDate: undefined,
+    comleteDate: Infinity,
     id: "2",
   },
   {
     text: "Visit party",
     done: false,
     createDate: new Date().toISOString(),
-    comleteDate: undefined,
+    comleteDate: Infinity,
     id: "3",
   },
   {
@@ -82,7 +82,7 @@ const onToggleTask = (e) => {
   if (taskData.done) {
     taskData.completeDate = new Date().toISOString();
   } else {
-    taskData.completeDate = undefined;
+    taskData.completeDate = Infinity;
   }
   renderTasks(tasks);
 };
