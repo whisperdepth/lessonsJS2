@@ -44,7 +44,7 @@ const renderTasks = (tasksList) => {
     .sort((a, b) => a.done - b.done)
     .sort(
       (a, b) =>
-        new Date(b.completeData).getTime() - new Date(a.completeData).getTime()
+        new Date(b.completeDate).getTime() - new Date(a.completeDate).getTime()
     )
     .map(({ text, done, id }) => {
       const listItemElem = document.createElement("li");
@@ -74,11 +74,8 @@ const onToggleTask = (e) => {
   const taskData = tasks.find((task) => task.id === e.target.dataset.id);
 
   Object.assign(taskData, { done: e.target.checked });
-  if (taskData.done) {
-    taskData.completeData = new Date().toISOString()
-  }else{
-    delete taskData.completeData;
-  }
+  if (taskData.done) 
+    taskData.completeDate = new Date().toISOString();
   renderTasks(tasks);
 };
 
