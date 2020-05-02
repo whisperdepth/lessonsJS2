@@ -5,30 +5,35 @@ const tasks = [
     text: "Buy milk",
     done: false,
     createDate: new Date().toISOString(),
+    comleteDate: undefined,
     id: "1",
   },
   {
     text: "Pick up Tom from airport",
     done: false,
     createDate: new Date().toISOString(),
+    comleteDate: undefined,
     id: "2",
   },
   {
     text: "Visit party",
     done: false,
     createDate: new Date().toISOString(),
+    comleteDate: undefined,
     id: "3",
   },
   {
     text: "Visit doctor",
     done: true,
     createDate: new Date().toISOString(),
+    comleteDate: undefined,
     id: "4",
   },
   {
     text: "Buy meat",
     done: true,
     createDate: new Date().toISOString(),
+    comleteDate: undefined,
     id: "5",
   },
 ];
@@ -74,8 +79,11 @@ const onToggleTask = (e) => {
   const taskData = tasks.find((task) => task.id === e.target.dataset.id);
 
   Object.assign(taskData, { done: e.target.checked });
-  if (taskData.done) 
+  if (taskData.done) {
     taskData.completeDate = new Date().toISOString();
+  } else {
+    taskData.completeDate = undefined;
+  }
   renderTasks(tasks);
 };
 
