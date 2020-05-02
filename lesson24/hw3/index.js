@@ -102,6 +102,7 @@ const onCreateTask = () => {
     text,
     done: false,
     createDate: new Date().toISOString(),
+    comleteDate: Infinity,
     id: Math.random().toString(),
   });
   renderTasks(tasks);
