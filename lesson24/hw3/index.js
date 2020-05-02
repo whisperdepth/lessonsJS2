@@ -26,14 +26,14 @@ const tasks = [
     text: "Visit doctor",
     done: true,
     createDate: new Date().toISOString(),
-    comleteDate: undefined,
+    comleteDate: new Date().toISOString(),
     id: "4",
   },
   {
     text: "Buy meat",
     done: true,
     createDate: new Date().toISOString(),
-    comleteDate: undefined,
+    comleteDate: new Date().toISOString(),
     id: "5",
   },
 ];
