@@ -38,13 +38,12 @@ const tasks = [
   },
 ];
 
-
 const compareTasks = (a, b) => {
     if (a.done - b.done !== 0) {
         return a.done - b.done;
     };
     if (a.done) {
-        return new Date(b.finishDate) - new Date(a.finishDate);
+        return new Date(b.doneDate) - new Date(a.doneDate);
     }
     return new Date(b.createDate) - new Date(a.createDate);
 };
@@ -53,7 +52,7 @@ const renderTasks = (tasksList) => {
   listElem.innerHTML = "";
   const tasksElems = tasksList
     .slice()
-    .sort((a, b) => compareTasks(a, b))
+    .sort(compareTasks)
     .map(({ text, done, id }) => {
       const listItemElem = document.createElement("li");
       listItemElem.classList.add("list__item");
@@ -81,7 +80,7 @@ const onToggleTask = (e) => {
   }
   const taskData = tasks.find((task) => task.id === e.target.dataset.id);
 
-  taskData.done = e.target.checked;
+  taskData.done = e.target.checked
   taskData.done
     ? (taskData.doneDate = new Date().toISOString())
     : (taskData.doneDate = null);
