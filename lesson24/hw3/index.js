@@ -5,35 +5,35 @@ const tasks = [
     text: "Buy milk",
     done: false,
     createDate: new Date().toISOString(),
-    comleteDate: Infinity,
+    doneDate: Infinity,
     id: "1",
   },
   {
     text: "Pick up Tom from airport",
     done: false,
     createDate: new Date().toISOString(),
-    comleteDate: Infinity,
+    doneDate: Infinity,
     id: "2",
   },
   {
     text: "Visit party",
     done: false,
     createDate: new Date().toISOString(),
-    comleteDate: Infinity,
+    doneDate: Infinity,
     id: "3",
   },
   {
     text: "Visit doctor",
     done: true,
     createDate: new Date().toISOString(),
-    comleteDate: new Date().toISOString(),
+    doneDate: new Date().toISOString(),
     id: "4",
   },
   {
     text: "Buy meat",
     done: true,
     createDate: new Date().toISOString(),
-    comleteDate: new Date().toISOString(),
+    doneDate: new Date().toISOString(),
     id: "5",
   },
 ];
@@ -48,8 +48,7 @@ const renderTasks = (tasksList) => {
     )
     .sort((a, b) => a.done - b.done)
     .sort(
-      (a, b) =>
-        new Date(b.completeDate).getTime() - new Date(a.completeDate).getTime()
+      (a, b) => new Date(b.doneDate).getTime() - new Date(a.doneDate).getTime()
     )
     .map(({ text, done, id }) => {
       const listItemElem = document.createElement("li");
@@ -80,9 +79,9 @@ const onToggleTask = (e) => {
 
   Object.assign(taskData, { done: e.target.checked });
   if (taskData.done) {
-    taskData.completeDate = new Date().toISOString();
+    taskData.doneDate = new Date().toISOString();
   } else {
-    taskData.completeDate = Infinity;
+    taskData.doneDate = Infinity;
   }
   renderTasks(tasks);
 };
@@ -102,7 +101,7 @@ const onCreateTask = () => {
     text,
     done: false,
     createDate: new Date().toISOString(),
-    comleteDate: Infinity,
+    doneDate: Infinity,
     id: Math.random().toString(),
   });
   renderTasks(tasks);
