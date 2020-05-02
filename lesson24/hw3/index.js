@@ -79,7 +79,6 @@ const onToggleTask = (e) => {
   }else{
     delete taskData.completeData;
   }
-  console.log(taskData);
   renderTasks(tasks);
 };
 
