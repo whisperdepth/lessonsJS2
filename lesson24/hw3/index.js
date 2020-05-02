@@ -78,11 +78,10 @@ const onToggleTask = (e) => {
   const taskData = tasks.find((task) => task.id === e.target.dataset.id);
 
   Object.assign(taskData, { done: e.target.checked });
-  if (taskData.done) {
-    taskData.doneDate = new Date().toISOString();
-  } else {
-    taskData.doneDate = Infinity;
-  }
+  taskData.done
+    ? (taskData.doneDate = new Date().toISOString())
+    : (taskData.doneDate = Infinity);
+
   renderTasks(tasks);
 };
 
