@@ -108,5 +108,3 @@ const onCreateTask = () => {
   });
   renderTasks(tasks);
 };
-
-createBtnElem.addEventListener("click", onCreateTask);
