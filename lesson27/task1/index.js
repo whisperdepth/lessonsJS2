@@ -1,5 +1,5 @@
 /* localStorage.clear(); */
-export const localStorageData = () => {
+export const getlocalStorageData = () => {
   return Object.entries(localStorage).reduce((acc, [key, value]) => {
     let newValue;  
     try{
