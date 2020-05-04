@@ -1,10 +1,13 @@
-/* localStorage.clear(); */
+
+localStorage.setItem("names", JSON.stringify({name: "Tom"}));
+localStorage.setItem("name", "Tom");
+
 export const getLocalStorageData = () => {
   return Object.entries(localStorage).reduce((acc, [key, value]) => {
     let newValue;  
     try{
         newValue = JSON.parse(value);
-      }catch(){
+      }catch(e){
         newValue = value;
       }
     return {
@@ -13,3 +16,4 @@ export const getLocalStorageData = () => {
     };
   }, {});
 };
+console.log(getLocalStorageData());
