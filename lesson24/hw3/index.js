@@ -39,13 +39,13 @@ const tasks = [
 ];
 
 const compareTasks = (a, b) => {
-    if (a.done - b.done !== 0) {
-        return a.done - b.done;
-    };
-    if (a.done) {
-        return new Date(b.doneDate) - new Date(a.doneDate);
-    }
-    return new Date(b.createDate) - new Date(a.createDate);
+  if (a.done - b.done !== 0) {
+    return a.done - b.done;
+  }
+  if (a.done) {
+    return new Date(b.doneDate) - new Date(a.doneDate);
+  }
+  return new Date(b.createDate) - new Date(a.createDate);
 };
 
 const renderTasks = (tasksList) => {
@@ -80,7 +80,7 @@ const onToggleTask = (e) => {
   }
   const taskData = tasks.find((task) => task.id === e.target.dataset.id);
 
-  taskData.done = e.target.checked
+  taskData.done = e.target.checked;
   taskData.done
     ? (taskData.doneDate = new Date().toISOString())
     : (taskData.doneDate = null);
@@ -108,3 +108,5 @@ const onCreateTask = () => {
   });
   renderTasks(tasks);
 };
+
+createBtnElem.addEventListener("click", onCreateTask);
