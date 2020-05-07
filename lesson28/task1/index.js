@@ -16,7 +16,7 @@ export const calc = (initValue) => {
       return this;
     },
 
-    substract(number) {
+    subtract(number) {
       value -= number;
       return this;
     },
