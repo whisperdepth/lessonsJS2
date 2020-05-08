@@ -1,5 +1,5 @@
 export const shmoment = (date) => {
-  let newDate = date;
+  let newDate = {...date};
 
   const changer = {
     add(timeUnits, value) {
@@ -100,4 +100,4 @@ export const shmoment = (date) => {
   return changer;
 };
 
-/* console.log(new Date(shmoment(new Date()).subtract("years", 1).add("years", 10).result())); */
+console.log(new Date(shmoment(new Date()).subtract("years", 1).add("years", 10).result()));
