@@ -93,11 +93,11 @@ export const shmoment = (date) => {
     },
 
     result() {
-      return newDate;
+      return new Date(newDate);
     },
   };
 
   return changer;
 };
 
-console.log(new Date(shmoment(new Date()).subtract("years", 1).add("years", 10).result()));
+console.log(shmoment(new Date()).subtract("years", 1).add("years", 10).result());
