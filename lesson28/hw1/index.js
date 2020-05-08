@@ -55,7 +55,7 @@ export const shmoment = (date) => {
         return this;
       }
 
-      if (timeUnits == "month") {
+      if (timeUnits == "months") {
         newDate = new Date(date).setMonth(new Date(date).getMonth() - value);
         return this;
       }
