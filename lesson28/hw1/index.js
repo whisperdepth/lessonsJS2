@@ -1,47 +1,53 @@
 export const shmoment = (date) => {
-  let newDate;
+  let newDate = new Date(date);
 
   const changer = {
     add(timeUnits, value) {
       if (timeUnits == "years") {
-        newDate = new Date(date).setFullYear(
-          new Date(date).getFullYear() + value
+        newDate = new Date(newDate).setFullYear(
+          new Date(newDate).getFullYear() + value
         );
         return this;
       }
 
       if (timeUnits == "months") {
-        newDate = new Date(date).setMonth(new Date(date).getMonth() + value);
+        newDate = new Date(newDate).setMonth(
+          new Date(newDate).getMonth() + value
+        );
         return this;
       }
 
       if (timeUnits == "days") {
-        newDate = new Date(date).setDate(new Date(date).getDate() + value);
+        newDate = new Date(newDate).setDate(
+          new Date(newDate).getDate() + value
+        );
         return this;
       }
 
       if (timeUnits == "hours") {
-        newDate = new Date(date).setHours(new Date(date).getHours() + value);
+        newDate = new Date(newDate).setHours(
+          new Date(newDate).getHours() + value
+        );
         return this;
       }
 
       if (timeUnits == "minutes") {
-        newDate = new Date(date).setMinutes(
-          new Date(date).getMinutes() + value
+        newDate = new Date(newDate).setMinutes(
+          new Date(newDate).getMinutes() + value
         );
         return this;
       }
 
       if (timeUnits == "seconds") {
-        newDate = new Date(date).setSeconds(
-          new Date(date).getSeconds() + value
+        newDate = new Date(newDate).setSeconds(
+          new Date(newDate).getSeconds() + value
         );
         return this;
       }
 
       if (timeUnits == "milliseconds") {
-        newDate = new Date(date).setMilliseconds(
-          new Date(date).getMilliseconds() + value
+        newDate = new Date(newDate).setMilliseconds(
+          new Date(newDate).getMilliseconds() + value
         );
         return this;
       }
@@ -49,44 +55,50 @@ export const shmoment = (date) => {
 
     subtract(timeUnits, value) {
       if (timeUnits == "years") {
-        newDate = new Date(date).setFullYear(
-          new Date(date).getFullYear() - value
+        newDate = new Date(newDate).setFullYear(
+          new Date(newDate).getFullYear() - value
         );
         return this;
       }
 
       if (timeUnits == "months") {
-        newDate = new Date(date).setMonth(new Date(date).getMonth() - value);
+        newDate = new Date(newDate).setMonth(
+          new Date(newDate).getMonth() - value
+        );
         return this;
       }
 
       if (timeUnits == "days") {
-        newDate = new Date(date).setDate(new Date(date).getDate() - value);
+        newDate = new Date(newDate).setDate(
+          new Date(newDate).getDate() - value
+        );
         return this;
       }
 
       if (timeUnits == "hours") {
-        newDate = new Date(date).setHours(new Date(date).getHours() - value);
+        newDate = new Date(newDate).setHours(
+          new Date(newDate).getHours() - value
+        );
         return this;
       }
 
       if (timeUnits == "minutes") {
-        newDate = new Date(date).setMinutes(
-          new Date(date).getMinutes() - value
+        newDate = new Date(newDate).setMinutes(
+          new Date(newDate).getMinutes() - value
         );
         return this;
       }
 
       if (timeUnits == "seconds") {
-        newDate = new Date(date).setSeconds(
-          new Date(date).getSeconds() - value
+        newDate = new Date(newDate).setSeconds(
+          new Date(newDate).getSeconds() - value
         );
         return this;
       }
 
       if (timeUnits == "milliseconds") {
-        newDate = new Date(date).setMilliseconds(
-          new Date(date).getMilliseconds() - value
+        newDate = new Date(newDate).setMilliseconds(
+          new Date(newDate).getMilliseconds() - value
         );
         return this;
       }
@@ -101,5 +113,5 @@ export const shmoment = (date) => {
 };
 
 console.log(
-  shmoment(new Date()).subtract("years", 1).add("years", 10).result()
+  shmoment(new Date()).subtract("years", 10).add("years", 2).result()
 );
