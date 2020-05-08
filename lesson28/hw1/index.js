@@ -2,7 +2,7 @@ export const shmoment = (date) => {
   let newDate = date;
 
   const changer = {
-    add(value) {
+    add(timeUnits, value) {
       if (timeUnits == "years") {
         newDate = new Date(date).setFullYear(
           new Date(date).getFullYear() + value
@@ -92,12 +92,12 @@ export const shmoment = (date) => {
       }
     },
 
-    result(){
-        return newDate
-    }
+    result() {
+      return newDate;
+    },
   };
 
   return changer;
 };
 
-console.log(new Date(shmoment(new Date()).subtract("years", 1).result()));
+console.log(new Date(shmoment(new Date()).subtract("years", 1).add("years", 10).result()));
