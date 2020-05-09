@@ -2,6 +2,7 @@ export const shmoment = (date) => {
   let newDate = new Date(date);
 
   const changer = {
+      
     add(timeUnits, value) {
       if (timeUnits == "years") {
         newDate = new Date(newDate).setFullYear(
