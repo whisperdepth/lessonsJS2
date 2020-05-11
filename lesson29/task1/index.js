@@ -19,7 +19,7 @@ export const addImage = (imgSrc, callback) => {
   imgElem.addEventListener("error", onError);
 };
 
-/* const imgSrc =
+const imgSrc =
   "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80";
 
 const callback = (error, data) => {
@@ -33,4 +33,4 @@ const callback = (error, data) => {
   sizeElem.textContent = `${width} x ${height}`;
 };
 
-addImage(imgSrc, callback); */
+addImage(imgSrc, callback);
