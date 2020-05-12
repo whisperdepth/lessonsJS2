@@ -1,4 +1,4 @@
-const addImageWithPromise = (imgSrc) => {
+export const addImageWithPromise = (imgSrc) => {
   const p = new Promise((resolve, reject) => {
     const imgElem = document.createElement("img");
     imgElem.setAttribute("alt", "My photo");
