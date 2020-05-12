@@ -16,10 +16,3 @@ export const requestUserData = (userId, callback) => {
   
 };
 
-/* const callback = (error) => {
-  if (error) {
-    console.log(error);
-  }
-};
-
-requestUserData("broken", callback); */
