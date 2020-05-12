@@ -1,7 +1,7 @@
 export const requestUserData = (userId, callback) => {
 
   if (userId == "broken") {
-    callback(null, "Failed to load userdata");
+    callback(null, "Failed to load user data");
     return;
   }
 
