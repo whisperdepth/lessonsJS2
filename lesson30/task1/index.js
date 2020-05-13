@@ -22,12 +22,12 @@ export const addImage = (imgSrc) => {
 
   return p;
 };
-/* 
+
 const imgSrc =
   "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80";
 
-const p = addImageWithPromise(imgSrc);
+const p = addImage(imgSrc);
 
 p.then((data) => console.log(data));
 p.catch((error) => console.log(error));
- */
+
