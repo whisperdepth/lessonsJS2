@@ -8,4 +8,4 @@ export const getTasksList = () =>
 export const getTaskById = (taskId) =>
   getTasksList().then((tasks) => tasks.find((task) => task.id == taskId));
 
-console.log(getTaskById(2));
+/* console.log(getTaskById(2)); */
