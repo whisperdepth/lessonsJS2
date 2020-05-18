@@ -3,12 +3,12 @@ export const timer = {
   minsPassed: 0,
   startTimer() {
     this.timerID = setInterval(() => {
-      this.secondsPassed += 5;
+      this.secondsPassed += 1;
       if (this.secondsPassed == 60) {
         this.minsPassed += 1;
         this.secondsPassed = 0;
       }
-    }, 5 * 1000);
+    }, 1000);
   },
 
   getTime() {
