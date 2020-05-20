@@ -1,31 +1,21 @@
-/* const user = {
-  name: "Tom",
-  sayHi() {
-    console.log(`Hi, I am ${this.name}`);
-  },
+function printMessage(age, city) {
+  console.log(
+    `Hello ${this.firstName}, email ${this.email}, age: ${age}, city: ${city}`
+  );
+}
+let user = {
+  firstName: "Alex",
+  email: "gmail.com",
 };
 
-
-export function bind(func, context, [args]) {
-  return function () {
-    return func.apply(context, [args]);
+function bind(func, context, ...bindArgs) {
+  return function (...funcArgs) {
+    let copy = Object.assign({}, context);
+    copy.tempFunction = func;
+   return copy.tempFunction(...bindArgs, ...funcArgs);
   };
 }
-
-const func3 = user.sayHi;
-
-const func4 = bind(func3, user, []);
-
-func4();
-func4.apply({ name: "Sam" });
-func4.bind({name: "Bob"});
-func4();
+bind(printMessage, user)(30, "Kiev");
+/* bind(printMessage, user, 30)("Kiev");
+bind(printMessage, user, 30, "Kiev")();
  */
-
-export const bind = function (func, context) {
-  let bindArgs = [].slice.call(arguments, 2);
-  return function () {
-    let funcArgs = [].slice.call(arguments);
-    return func.apply(context, bindArgs.concat(funcArgs));
-  };
-};
