@@ -8,23 +8,23 @@ export const getUserById = (userId) => {
   return fetch(`${baseUrl}/${userId}`).then((response) => response.json());
 };
 
-export const createUser = (obj) => {
+export const createUser = (user) => {
   return fetch(baseUrl, {
     method: "POST",
     headers: {
       "Content-type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(obj),
+    body: JSON.stringify(user),
   });
 };
 
-export const updateUser = (userId, updatedObjData) => {
+export const updateUser = (userId, updatedUserData) => {
   return fetch(`${baseUrl}/${userId}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(updatedObjData),
+    body: JSON.stringify(updatedUserData),
   });
 };
 
