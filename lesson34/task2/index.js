@@ -32,4 +32,4 @@ export const deleteUser = (userId) => {
   return fetch(`${baseUrl}/${userId}`, {
     method: "DELETE",
   });
-}
+};
