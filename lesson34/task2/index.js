@@ -28,9 +28,8 @@ export const updateUser = (userId, updatedObjData) => {
   });
 };
 
-const myUser = {
-  age: 35,
-};
-
-updateUser(6, myUser);
-updateUser(5, myUser);
+export const deleteUser = (userId) => {
+  return fetch(`${baseUrl}/${userId}`, {
+    method: "DELETE",
+  });
+}
