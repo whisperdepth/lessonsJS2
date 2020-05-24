@@ -8,9 +8,10 @@ export const onDeleteTask = (e) => {
 
   if (!isDeleteBtn) return;
 
-  const parent = e.target.closest(".list-item");
-  const checkbox = parent.querySelector(".list-item__checkbox");
-  const taskId = checkbox.dataset.id;
+  const taskId = e.target
+    .closest(".list-item")
+    .querySelector(".list-item__checkbox").dataset.id;;
+  
   deleteTask(taskId)
     .then(() => getTasksList())
     .then((newTasksList) => {
