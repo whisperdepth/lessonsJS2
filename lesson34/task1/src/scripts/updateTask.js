@@ -9,15 +9,9 @@ export const onToggleTask = (e) => {
 
 
   const taskId = e.target.dataset.id;
-  const tasksList = getItem("tasksList");
-  
-  const { text, createDate } = tasksList
-    .find((task) => task.id === taskId);
   const done = e.target.checked;
 
   const updatedTask = {
-    text,
-    createDate,
     done,
     doneDate: done ? new Date().toISOString() : null,
   };
@@ -35,3 +29,14 @@ export const onToggleTask = (e) => {
 //3. Read new data from database
 //4. Save new data to front-end storage
 //5. Update user interface (UI) based on new data
+
+
+/* const { text, createDate } = tasksList.find((task) => task.id === taskId);
+const done = e.target.checked;
+
+const updatedTask = {
+  text,
+  createDate,
+  done,
+  doneDate: done ? new Date().toISOString() : null,
+}; */
