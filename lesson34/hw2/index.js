@@ -11,8 +11,6 @@ const onFormSubmit = (e) => {
     {}
   );
 
-  formElem.reset();
-
   fetch(baseUrl, {
     method: "POST",
     headers: {
@@ -21,7 +19,10 @@ const onFormSubmit = (e) => {
     body: JSON.stringify(formData),
   })
     .then((response) => response.json())
-    .then((value) => alert(JSON.stringify(value)))
+    .then((value) => {
+      alert(JSON.stringify(value));
+      formElem.reset();
+    })
     .catch(() => {
       errorElem.textContent = "Failed to create user";
     });
@@ -30,7 +31,7 @@ formElem.addEventListener("submit", onFormSubmit);
 const submitBtn = document.querySelector(".submit-button");
 
 const onInput = () => {
-  errorElem.textContent = null
+  errorElem.textContent = null;
   formElem.reportValidity()
     ? (submitBtn.disabled = false)
     : (submitBtn.disabled = true);
