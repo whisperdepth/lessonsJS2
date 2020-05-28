@@ -1,4 +1,4 @@
-const baseUrl = "https://5eca703a38df960016511722.ockapi.io/api/v1/users";
+const baseUrl = "https://5eca703a38df960016511722.mockapi.io/api/v1/users";
 
 const formElem = document.querySelector(".login-form");
 const errorElem = document.querySelector(".error-text");
