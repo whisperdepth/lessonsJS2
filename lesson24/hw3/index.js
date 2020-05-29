@@ -75,9 +75,8 @@ renderTasks(tasks);
 const onToggleTask = (e) => {
   const isCheckbox = e.target.classList.contains("list__item-checkbox");
 
-  if (!isCheckbox) {
-    return;
-  }
+  if (!isCheckbox) return;
+  
   const taskData = tasks.find((task) => task.id === e.target.dataset.id);
 
   taskData.done = e.target.checked;
