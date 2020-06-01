@@ -16,4 +16,4 @@ export const getUsersBlogs = (usersArray) => {
   );
 };
 
-console.log(getUsersBlogs(["google", "facebook", "gaearon"]));
+/* console.log(getUsersBlogs(["google", "facebook", "gaearon"])); */
