@@ -11,7 +11,9 @@ export const getUsersBlogs = (usersArray) => {
     promisesArray.push(getUser(usersArray[i]));
   }
 
-  return  Promise.all(promisesArray).then(responses => responses.map(response => response.blog))
+  return Promise.all(promisesArray).then((responses) =>
+    responses.map((response) => response.blog)
+  );
 };
 
 console.log(getUsersBlogs(["google", "facebook", "gaearon"]));
