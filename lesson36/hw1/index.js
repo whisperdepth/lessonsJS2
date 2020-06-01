@@ -1,6 +1,6 @@
 export const getUsersBlogs = (usersArray) => {
-  const getUser = async (userId) => {
-    const user = await fetch(
+  const getUser = (userId) => {
+    const user = fetch(
       `https://api.github.com/users/${userId}`
     ).then((result) => result.json());
     return user;
@@ -16,4 +16,4 @@ export const getUsersBlogs = (usersArray) => {
   );
 };
 
-/* console.log(getUsersBlogs(["google", "facebook", "gaearon"])); */
+console.log(getUsersBlogs(["google", "facebook", "gaearon"]));
