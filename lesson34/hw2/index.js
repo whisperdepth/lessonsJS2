@@ -6,10 +6,12 @@ const errorElem = document.querySelector(".error-text");
 const onFormSubmit = (e) => {
   e.preventDefault();
 
-  const formData = [...new FormData(formElem)].reduce(
+ /*  const formData = [...new FormData(formElem)].reduce(
     (acc, [field, value]) => ({ ...acc, [field]: value }),
     {}
-  );
+  ); */
+
+   const formData = Object.fromEntries(new FormData(formElem));
 
   fetch(baseUrl, {
     method: "POST",
