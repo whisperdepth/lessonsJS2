@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#root {
+  display: flex;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  list-style: none;
+  margin-right: 10px;
+}
+
+img {
+  width: 20px;
+}
+
+.list-btn {
+  height: 50px;
+  width: 100px;
+}
+
+.btnA {
+  margin-top: 50px;
+  margin-right: -42px;
+}
+.btnC {
+  margin-top: 50px;
+  margin-left: -58px;
+}
+
+.input {
+  height: 30px;
+}
