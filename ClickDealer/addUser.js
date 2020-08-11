@@ -36,8 +36,7 @@ const onBlur = (e) => {
 export const onKeyUp = (e) => {
   if (data.accounts.length === 0) return;
   if (e.keyCode === 40) {
-    const toFocuseBtn = lastOnFocuse || document.querySelector(".btnA");
-
+    const toFocuseBtn = lastOnFocuse || document.querySelector(".btnA");ч
     toFocuseBtn.focus();
   } else if (e.keyCode === 38) {
     document.querySelector(".input").focus();
