@@ -1,3 +1,5 @@
+// в условии не написано, что нужно переключать фокус между кнопками стрелочками влево/вправо, однако без этого фокусировка попадет в ловушку между полем ввода и кнопкой Добавить
+
 import { data, container, renderUsers, imgUrl, handleKeyUp } from "./index.js";
 let lastOnFocuse = null;
 const inputField = document.createElement("input");
@@ -49,7 +51,7 @@ export const onKeyUp = (e) => {
 addButton.addEventListener("blur", onBlur);
 cancelButton.addEventListener("blur", onBlur);
 
-export const renderAddUser = () => {
+export const renderAddAccount = () => {
   container.removeEventListener("keyup", handleKeyUp);
   container.addEventListener("keyup", onKeyUp);
   container.append(addButton, inputField, cancelButton);

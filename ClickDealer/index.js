@@ -1,4 +1,7 @@
-import { renderAddUser, onKeyUp } from "./addUser.js";
+// в условии сказано про Json, для простоты использовал сразу объект, все равно Json надо распарсить const obj = JSON.parse(json) и работать уже с объектом
+// в условии не сказано, что должно произойти, когда массив пустой, поэтому на свое усмотрение я заблокировал удаление последнего оставшегося элемента
+
+import { renderAddAccount, onKeyUp } from "./addAccount.js";
 export const imgUrl = "https://avatars1.githubusercontent.com/u/9919?v=4";
 export const data = {
   accounts: [
@@ -20,7 +23,7 @@ export const data = {
   ],
 };
 
-// в условии сказано про Json, для простоты использовал сразу объект, все равно Json надо распарсить const obj = JSON.parse(json) и работать уже с объектом
+
 let lastOnFocuse = null;
 
 export const container = document.querySelector("#root");
@@ -30,7 +33,7 @@ listButton.textContent = "ADD";
 
 const handleClick = () => {
   container.innerHTML = null;
-  renderAddUser();
+  renderAddAccount();
 };
 listButton.addEventListener("click", handleClick);
 
