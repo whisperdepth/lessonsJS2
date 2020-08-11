@@ -20,6 +20,8 @@ export const data = {
   ],
 };
 
+// в условии сказано про Json, для простоты использовал сразу объект, все равно Json надо распарсить const obj = JSON.parse(json) и работать уже с объектом
+
 export const container = document.querySelector("#root");
 const listButton = document.createElement("button");
 listButton.classList.add("list-btn");
